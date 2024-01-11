@@ -1,3 +1,11 @@
+from pytube import YouTube
+
+def downloadVideo(url):
+    pass
+
+def downloadAudio(url):
+    pass
+
 def main():
     while True:
         print("***Welcome to Audio and Video downloader from Youtube***")
