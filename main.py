@@ -1,14 +1,18 @@
 from pytube import YouTube
 
 def downloadVideo(url):
-    pass
+    yt = YouTube(url)
+    video = yt.streams.filter(resolution='720p',file_extension='mp4').first()
+    video.download()
 
 def downloadAudio(url):
     pass
 
 def main():
     while True:
+        print()
         print("***Welcome to Audio and Video downloader from Youtube***")
+        print()
         print("1.Download Video 2.Download Audio 3.Exit")
         user_choice = input("Enter your choice (1/2/3): ")
         if user_choice == "1":
@@ -18,6 +22,7 @@ def main():
             url = input("Enter url of the audio: ")
             downloadAudio(url)
         elif user_choice == "3":
+            print()
             print("***Thank you for using the app***")
             return
         else:
