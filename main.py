@@ -6,7 +6,9 @@ def downloadVideo(url):
     video.download()
 
 def downloadAudio(url):
-    pass
+    yt = YouTube(url)
+    audio = yt.streams.get_audio_only()
+    audio.download()
 
 def main():
     while True:
